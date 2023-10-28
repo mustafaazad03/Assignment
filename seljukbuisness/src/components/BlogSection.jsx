@@ -2,7 +2,7 @@ import BlogCard from "./BlogCard";
 
 const BlogSection = () => {
 	return (
-		<div className="w-[1188px] h-[794px] pl-[79px] pr-[72px] pt-[18px] pb-[37px] bg-white mt-[106px]">
+		<div className="w-[1340px] h-[822px] pl-[79px] pr-[72px] pt-[18px] pb-[37px] bg-white mt-[106px]">
 			<div className="w-fit mx-auto">
 				<h2 className="self-stretch relative z-[1] text-[#373737] text-[61px] font-bold">
 					Blog
@@ -17,7 +17,7 @@ const BlogSection = () => {
 				Encuentra los artículos relacionados a tu sector y entérate de las
 				ultimas noticias.
 			</p>
-			<div className="flex justify-between">
+			<div className="flex gap-[42px]">
 				<BlogCard />
 				<BlogCard />
 				<BlogCard />

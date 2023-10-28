@@ -9,3 +9,7 @@
 .blogprofilephotoshadow {
 	box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.15);
 }
+
+.shadowhover {
+	box-shadow: 6px 16px 20px 0px rgba(0, 0, 0, 0.15);
+}

@@ -1,13 +1,30 @@
 import React from "react";
 
 const BlogCard = () => {
+	const [hover, setHover] = React.useState(false);
+	const [hover2, setHover2] = React.useState(false);
 	return (
-		<div className="w-[368px] h-[568px] blogshadow bg-white">
-			<img
-				src="https://s3-alpha-sig.figma.com/img/b04e/966b/55e86a1689facf7b292d53c8bdb40ba3?Expires=1699228800&Signature=V9p4U5rUE~3j0KyO29Hs~EF4WbLFd6if26rj7XUT1Tq6eOx7mnBmk9rEE~F3hhSQgiW~h9C8aAuEpPZjyZBRq-ngTmZNdPLQVyx-LyXfjqZginlWyhbyM1ROwZ2HN1uKCoKfR0FleHVJQpODcVkOBNghGNHOkr3u8~rXZRYjqATjd8vYaVgg8~ab75pqFE3Xrjvdrqd22tJ82E-Q2q7lCMjfwrbmWa0dCY1QDi875zM2efw5irPDs8Zfd1gccPFfhjjKZVURaa-7RY5X9ACIHjd5lZe0pl16cpYyyubFttFCdu~yUfjhiEVXNbHuhyiz0KvUv2ymWhfDqRuKI72vIA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-				alt="BlogCard"
-				className="w-full h-[221px] object-cover self-stretch"
-			/>
+		<div
+			className={`w-[368px] h-[584px] blogshadow bg-white pb-[16px] transition-all ease-linear duration-500 ${
+				hover2 ? "scale-105 shadowhover" : "scale-100"
+			}`}
+			onMouseEnter={() => setHover2(true)}
+			onMouseLeave={() => setHover2(false)}
+		>
+			<div
+				className="relative w-[368px] h-[221px] overflow-hidden"
+				onMouseEnter={() => setHover(true)}
+				onMouseLeave={() => setHover(false)}
+			>
+				<img
+					src="https://s3-alpha-sig.figma.com/img/b04e/966b/55e86a1689facf7b292d53c8bdb40ba3?Expires=1699228800&Signature=V9p4U5rUE~3j0KyO29Hs~EF4WbLFd6if26rj7XUT1Tq6eOx7mnBmk9rEE~F3hhSQgiW~h9C8aAuEpPZjyZBRq-ngTmZNdPLQVyx-LyXfjqZginlWyhbyM1ROwZ2HN1uKCoKfR0FleHVJQpODcVkOBNghGNHOkr3u8~rXZRYjqATjd8vYaVgg8~ab75pqFE3Xrjvdrqd22tJ82E-Q2q7lCMjfwrbmWa0dCY1QDi875zM2efw5irPDs8Zfd1gccPFfhjjKZVURaa-7RY5X9ACIHjd5lZe0pl16cpYyyubFttFCdu~yUfjhiEVXNbHuhyiz0KvUv2ymWhfDqRuKI72vIA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+					alt="BlogCard"
+					className={`w-full h-full object-cover self-stretch transition-all duration-500 ease-in-out ${
+						hover ? "transform scale-125" : "transform scale-100"
+					}`}
+				/>
+				{hover && <div className="absolute inset-0 bg-black opacity-50"></div>}
+			</div>
 			<div className="px-[16px] flex items-start z-10 space-x-3 relative bottom-[23px] w-full">
 				<img
 					src="https://s3-alpha-sig.figma.com/img/2d58/484d/bf61df8891bedd87e0db3ebb6a1e7d90?Expires=1699228800&Signature=QCHLS17d7QedNpS~IMRe5p7ifptQyDxXxEiNFeKtVudwJiCbyAWluoSYyvXX8r4DRsfLFTb4bMGSs9MT0iuj9h1PEbf~2edQx9YH4kGoRt8S41pSVlbbgJo4f5R8WGTOJyqOpSt3YEMfslN6YQhKCVeaRMm31Ome4w-KiPjb~68uYqxkDron2TXAKMMKLU9x2eoPDJAfD1uu8Sw-9BKDXKetpnNvKjEyXqSRwCqiBLSxJHM0K93dTMidFWP6XLcUmnzD2lqY87Aboie~uNg~ovXe8idhzY5hSzQSwxr0t6YH7U02gA7PrchPIU2FSW3R~U0-JGOFUC31J7enSehE2w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
@@ -30,7 +47,13 @@ const BlogCard = () => {
 						className="mt-[5px]"
 					/>
 				</div>
-				<div className="absolute right-[23px] bottom-[-50px] z-10 bg-[#D80027] p-[16.36px] rounded-[10px] w-fit h-fit blogprofilephotoshadow">
+				<div
+					className={`absolute right-[23px] bottom-[-50px] z-10 bg-[#D80027] p-[16.36px] rounded-[10px] w-fit h-fit blogprofilephotoshadow transition-all ease-linear duration-300 ${
+						hover2
+							? "translate-x-[38px] opacity-100"
+							: "translate-x-0 opacity-0"
+					}`}
+				>
 					<svg
 						width="40"
 						height="40"
@@ -75,8 +98,8 @@ const BlogCard = () => {
 					<img src="/thumbsUp.svg" alt="like" />
 					<p className="text-[#7B7B7B]">340</p>
 				</div>
-				<div className="h-[36px] border-2 border-[#292929] px-[16px] py-[10px] rounded-[4px] space-x-[10px] flex items-center">
-					<h3 className="text-sm text-[#373737]">Compartir</h3>
+				<div className="h-[36px] hover:bg-[#292929] hover:text-[#f2f2f2] text-[#373737] transition-all ease-linear duration-200 border-2 border-[#292929] px-[16px] py-[10px] rounded-[4px] space-x-[10px] flex items-center">
+					<h3 className="text-sm">Compartir</h3>
 					<svg
 						width="20"
 						height="20"
