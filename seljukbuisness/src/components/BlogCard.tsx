@@ -48,7 +48,7 @@ const BlogCard = () => {
 					/>
 				</div>
 				<div
-					className={`absolute right-[23px] bottom-[-50px] z-10 bg-[#D80027] p-[16.36px] rounded-[10px] w-fit h-fit blogprofilephotoshadow transition-all ease-linear duration-300 ${
+					className={`absolute right-[23px] bottom-[-50px] z-10 bg-[#D80027] p-[16.36px] rounded-[10px] w-fit h-fit blogprofilephotoshadow transition-all ease-linear duration-500 ${
 						hover2
 							? "translate-x-[38px] opacity-100"
 							: "translate-x-0 opacity-0"

@@ -49,7 +49,7 @@ const RegistrationForm = () => {
 			/>
 			<button
 				type="submit"
-				className="h-[44px] text-[16px] text-white py-[10px] px-[32px] self-stretch rounded-[4px] flex items-center justify-center bg-[#D80027]"
+				className="h-[44px] text-[16px] text-white py-[10px] px-[32px] self-stretch rounded-[4px] flex items-center justify-center bg-[#D80027] hover:bg-[#D8002750]"
 			>
 				Registrate
 			</button>
